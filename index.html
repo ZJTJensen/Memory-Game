@@ -8,14 +8,16 @@
     <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
     <script src="js/style.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title>Memory Lapse</title>
+    <title>Periodic Lapse</title>
 </head>
 
 <body id= "full">
+        <div id="winner">
+            </div>
     <div id = 'background'>
     </div>
         <div id = 'start'>
-            <h2>Memory Laspe</h2>
+            <h2>Periodic Memory</h2>
             <select id="image-number">
                 <option value="3" selected="selected">3</option>
                 <option value="6">6</option>
@@ -29,11 +31,15 @@
         </div>
         <div id='turn'></div>
         <div id ='game'>
+            <div id="who-turn"></div>
             <div id='cards'></div>
         </div>
         <div id='blue-score'>
             <span id="blue">Blue:</span>
             <span id="blue-board">0</span>
+        
+        
+
         </div>
 </body>
 

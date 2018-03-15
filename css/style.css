@@ -1,7 +1,47 @@
 html, body{
     height: 100%;
     background: linear-gradient(to bottom right, red, blue); 
-    
+}
+#start{
+    display: inline-block;
+    width: 300px;
+    height: 100px;
+    background-color: rgba(168, 61, 174, 0.57);
+    border: 5px solid black;
+    border-radius: 10px;
+    margin: 15% 0 0 40%;
+    text-align: center;
+}
+#who-turn{
+    border: 1px solid black;
+    display: block;
+    width: auto;
+    height: auto;
+    position: absolute;
+    background: purple; 
+    border-radius: 10px;
+    margin: 20px 0 0 43%;
+}
+#winner{
+    height: 98%;
+    width: 98%;
+    position: absolute;
+    z-index: 10 !important;
+    background-image: url("../imgs/end/confet.gif");
+    margin: 0 auto;
+    display: none;
+}
+#winning-color{
+    margin: 15% 0 0 40%;
+    width: 200px;
+    height: 100px;
+    background: white;
+    border: 5px solid black;
+    text-align: center;
+    border-radius: 10px;
+}
+#buttonRefresh{
+    margin: 1% 0 0 45%;
 }
 #game {
     z-index: 3;
@@ -17,7 +57,7 @@ html, body{
     position: relative;
 }
 #red-score, #blue-score{
-    display: inline-block;
+    display: none;
     position: absolute;
 }
 #blue-score{
@@ -106,6 +146,4 @@ html, body{
     display: inline-block;
     margin: 0 auto;
     /* border: 1px solid black; */
-}
-.map1.map2.map3.map4.map5.map6.map7.map8.map9.map10.map11.map12{
 }
