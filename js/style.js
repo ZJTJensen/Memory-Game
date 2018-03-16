@@ -7,6 +7,8 @@ $(document).ready(function(){
         var turn;
         var start = Math.floor(Math.random() * 2) + 1;
         var flip = new Audio('sounds/flip.mp3');
+        
+        
 
     $("#start-button").click(function(num){
         if(start == 1 || turn =="Blue"){
@@ -22,18 +24,9 @@ $(document).ready(function(){
         }
         var val = document.getElementById('image-number');
         num = val.options[val.selectedIndex].value;
+        document.getElementById("cards").id = "cards"+num;
         $("#start").hide();
         var temp = (Math.random() <= 0.5) ? 1 : 2;
-        // if (temp == 1){
-        //     start ="red";
-        //     document.getElementById('backgrond').style = "background-color: red;"
-        //     $('#background').animate({width: 'toggle'});
-        // }
-        // else{
-        //     start ="blue";
-        //     document.getElementById('backgrond').style = "background-color: blue;"
-        //     $('#background').animate({width: 'toggle'});
-        // }
         $("#game").slideToggle("slow", function(){});
         document.getElementById("red-score").style= "display:inline-block;"
         document.getElementById("blue-score").style= "display:inline-block;"
@@ -63,21 +56,22 @@ $(document).ready(function(){
             map = shuffleArray(map);
         }
         for(var i=0; i < map.length; i++){
-            document.getElementById("cards").innerHTML += 
-            "<div class='er"+ num+"'><div class='front'> <img style ='width: 70%; height: auto;' src ='imgs/play.jpg'></div> <div class='back'><img style ='height:45%; width:40%;' class = 'img' alt='"+map[i]+"' src='imgs/gameCards/"+ map[i]+".jpg'><h1>"+ map[i]+"</h1></div></div>"
+           
+            document.getElementById("cards"+num).innerHTML += 
+            "<div class='er"+ num+"'><div class='front'> <img style ='width: 70%; height: auto;' src ='imgs/play.jpg'></div> <div class='back'><div style='width: 70%; height: 100%;background-color:white;'><img style='width: 70%; height: auto;' class = 'img' alt='"+map[i]+"' src='imgs/gameCards/"+ map[i]+".jpg'><p>"+ map[i]+"</p></div></div></div>"
             if(num == 3 && i+1 == map.length/2){
-                document.getElementById("cards").innerHTML += "</br>"
+                document.getElementById("cards"+num).innerHTML += "</br>"
             }
             if(num == 6 && (i == 3 || i == 7)){
-                document.getElementById("cards").innerHTML += "</br>"
+                document.getElementById("cards"+num).innerHTML += "</br>"
             }
             if(num == 12 && (i == 5 || i == 11 || i == 17)){
                 
-                document.getElementById("cards").innerHTML += "</br>"
+                document.getElementById("cards"+num).innerHTML += "</br>"
             }
+           
         }
 
-            // to do-- make it so that you recive the whole div, as to amek them display:none
 
         var flipped = 0;
         var choices =[];
@@ -124,21 +118,25 @@ $(document).ready(function(){
                     }
 
                     if(red + blue == num){
-                        document.getElementById("red-score").style= "display:none;"
-                        document.getElementById("blue-score").style= "display:none;"
-                        document.getElementById("game").style = "display:none;"
-                        document.getElementById("winner").style = "display:inline-block;"
-                        if (red > blue){
-                            document.getElementById('page').style ='background: linear-gradient(to bottom right, red, rgba(0, 0, 255, 0.405)); '
-                            document.getElementById('full').style ='background: linear-gradient(to bottom right, red, rgba(0, 0, 255, 0.405)); '                
-                            document.getElementById('winner').innerHTML = "<h1 id = 'winning-color' style ='color:red'>Winner</br> Red</h1><button onClick='location.reload()' id ='buttonRefresh'>Re-Start</button>"
+                        function end(){
 
-                        }else{
-                            document.getElementById('page').style ='background: linear-gradient(to bottom right, rgba(255, 0, 0, 0.405), blue); '
-                            document.getElementById('full').style ='background: linear-gradient(to bottom right, rgba(255, 0, 0, 0.405), blue); '
-                            document.getElementById('winner').innerHTML = "<h1 id = 'winning-color' style ='color:blue'>Winner</br> BLUE</h1><button onClick='location.reload()' id ='buttonRefresh'>Re-Start</button>"
-
+                            document.getElementById("red-score").style= "display:none;"
+                            document.getElementById("blue-score").style= "display:none;"
+                            document.getElementById("game").style = "display:none;"
+                            document.getElementById("winner").style = "display:inline-block;"
+                            if (red > blue){
+                                document.getElementById('page').style ='background: linear-gradient(to bottom right, red, rgba(0, 0, 255, 0.405)); '
+                                document.getElementById('full').style ='background: linear-gradient(to bottom right, red, rgba(0, 0, 255, 0.405)); '                
+                                document.getElementById('winner').innerHTML = "<h1 id = 'winning-color' style ='color:red'>Winner</br> Red</h1><button onClick='location.reload()' id ='buttonRefresh'>Re-Start</button>"
+                                
+                            }else{
+                                document.getElementById('page').style ='background: linear-gradient(to bottom right, rgba(255, 0, 0, 0.405), blue); '
+                                document.getElementById('full').style ='background: linear-gradient(to bottom right, rgba(255, 0, 0, 0.405), blue); '
+                                document.getElementById('winner').innerHTML = "<h1 id = 'winning-color' style ='color:blue'>Winner</br> BLUE</h1><button onClick='location.reload()' id ='buttonRefresh'>Re-Start</button>"
+                                
+                            }
                         }
+                        setTimeout(end, 1200)
                     }
                 }
                     setTimeout(time, 1200)
@@ -170,6 +168,12 @@ $(document).ready(function(){
       
          
     });
+
+    // // $('#cards:has(div.er6)').css('margin','20px 0 0 13.5%')
+    // if(("#cards").hasClass("er6")){
+    //     document.getElementById("cards").style = 'margin','20px 0 0 13.5%';
+    // }
+
 
 })
 
