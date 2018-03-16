@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="js/jquery.js"></script>
-    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    <script src="js/flip.js"></script>
     <script src="js/style.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Periodic Lapse</title>
@@ -17,7 +17,7 @@
     <div id = 'background'>
     </div>
         <div id = 'start'>
-            <h2>Periodic Memory</h2>
+            <h2 id="name">Periodic Memory</h2>
             <select id="image-number">
                 <option value="3" selected="selected">easy</option>
                 <option value="6">medium</option>
@@ -33,6 +33,7 @@
         <div id ='game'>
             <div id="who-turn"></div>
             <div id='cards'></div>
+            <button onClick='location.reload()' id ='buttonRefresher'>Re-Start</button>
         </div>
         <div id='blue-score'>
             <span id="blue">Blue:</span>

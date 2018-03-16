@@ -4,7 +4,7 @@
    
   }
 html, body{
-    height: 100%;
+    height: 672px;
     background: linear-gradient(to bottom right, red, blue); 
 }
 #start{
@@ -14,7 +14,7 @@ html, body{
     background-color: rgba(168, 61, 174, 0.57);
     border: 5px solid black;
     border-radius: 10px;
-    margin: 15% 0 0 40%;
+    margin: 162px 0 0 532px;
     text-align: center;
 }
 #who-turn{
@@ -25,11 +25,11 @@ html, body{
     position: absolute;
     background: purple; 
     border-radius: 10px;
-    margin: 20px 0 0 43%;
+    margin: 20px 0 0 464px;
 }
 #winner{
-    height: 98%;
-    width: 98%;
+    height: 672px;
+    width:  100%;
     position: absolute;
     z-index: 10 !important;
     background-image: url("../imgs/end/confet.gif");
@@ -37,7 +37,7 @@ html, body{
     display: none;
 }
 #winning-color{
-    margin: 15% 0 0 40%;
+    margin: 20px 0 0 500px;
     width: 200px;
     height: 100px;
     background: white;
@@ -57,23 +57,60 @@ html, body{
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-    margin: 1% 0 0 43.5%;
+    margin: 10.8px 0 0 53   0px;
 }
 #buttonRefresh:hover{
-        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-    
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#buttonRefresher{
+    position: absolute;
+    vertical-align: right;
+    background-color: rgb(75, 30, 91); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    margin: 0 auto;
+}
+#buttonRefresher:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#start-button{
+    background-color: rgb(75, 30, 91); /* Green */
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+#start-button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#name{
+    margin: 20px 0 0 0;
 }
 #game {
     z-index: 3;
     /* position:absolute; */
     bottom:0;
     display:none;
-    height: 93%;
-    width: 75%;
+    /* height: ; */
+    width: 1104.4px;
+    height: 632px;
     background-image: url("../imgs/game.png");
     background-repeat: no-repeat;
     background-size: contain;
-    margin: 2% 0 0 10%;
+    margin: 21.6px 0 0 108px;
     position: relative;
 }
 #red-score, #blue-score{
@@ -82,8 +119,9 @@ html, body{
 }
 #blue-score{
     bottom:0;
-    margin: 0 0 5% 5%;
+    margin: 0 0 54px 54px;
     vertical-align: top;
+    float: right;
 }
 #red-score{
     margin: 20px 0 0 0;
@@ -133,8 +171,7 @@ html, body{
 
 #background{
     display: none;
-    width: 0%;
-    height: 100%;
+    width: 1080px;
     z-index: 1;
 }
 .er3, .er6, .er12 {
@@ -159,6 +196,7 @@ html, body{
 .er12{
     width: 120px;
     height: auto;
+    margin: 10px 0 0px 10px;
 }
 img{
     vertical-align: top;
@@ -195,7 +233,7 @@ img{
     margin: 3.5%  0 0 13.5%;
 }
 #cards12{
-    margin: 2.5%  0 0 11.5%;
+    margin: 0.5%  0 0 11.5%;
 }
 .front{
     display: inline-block;

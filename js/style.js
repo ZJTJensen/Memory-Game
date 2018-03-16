@@ -129,10 +129,15 @@ $(document).ready(function(){
                                 document.getElementById('full').style ='background: linear-gradient(to bottom right, red, rgba(0, 0, 255, 0.405)); '                
                                 document.getElementById('winner').innerHTML = "<h1 id = 'winning-color' style ='color:red'>Winner</br> Red</h1><button onClick='location.reload()' id ='buttonRefresh'>Re-Start</button>"
                                 
-                            }else{
+                            }else if (red< blue){
                                 document.getElementById('page').style ='background: linear-gradient(to bottom right, rgba(255, 0, 0, 0.405), blue); '
                                 document.getElementById('full').style ='background: linear-gradient(to bottom right, rgba(255, 0, 0, 0.405), blue); '
                                 document.getElementById('winner').innerHTML = "<h1 id = 'winning-color' style ='color:blue'>Winner</br> BLUE</h1><button onClick='location.reload()' id ='buttonRefresh'>Re-Start</button>"
+                                
+                            }else{
+                                document.getElementById('page').style ='background: linear-gradient(to bottom right, red, blue); '
+                                document.getElementById('full').style ='background: linear-gradient(to bottom right, red, blue); '
+                                document.getElementById('winner').innerHTML = "<h1 id = 'winning-color' style ='color:linear-gradient(to bottom right,red, blue)'>Winner</br>TIE</h1><button onClick='location.reload()' id ='buttonRefresh'>Re-Start</button>"
                                 
                             }
                         }
