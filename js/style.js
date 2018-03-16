@@ -56,10 +56,10 @@ $(document).ready(function(){
             map = ['gold','gold-el','silver','silver-el','nickel','nickel-el']
             map = shuffleArray(map);
         }else if(num == 6){
-            map = [ 1,2,3,4,1,2,3,4,6,6,5,5]
+            map = ['gold','gold-el','silver','silver-el','nickel','nickel-el','copper','copper-el','iron','iron-el','zinc','zinc-el']
             map = shuffleArray(map);
         }else{
-            map = [1,2,3,4,5,6,1,2,3,4,5,6,12,11,10,9,8,7,12,11,10,9,8,7]
+            map = ['gold','gold-el','silver','silver-el','nickel','nickel-el','copper','copper-el','iron','iron-el','zinc','zinc-el','mercury','mercury-el','oxygen','oxygen-el','plutonium','plutonium-el','potassium','potassium-el','radium','radium-el','tin','tin-el']
             map = shuffleArray(map);
         }
         for(var i=0; i < map.length; i++){
@@ -99,7 +99,7 @@ $(document).ready(function(){
                 toFlip=false;
                 // var img1 =choices[0].getElementsByClassName('img').alt
                 // var img2 =choices[0].getElementsByClassName('img').alt
-                if(choices[0].includes(choices[1]) || choices[1].includes(choices[0])){
+                if((choices[0].includes(choices[1]) && choices[0]!= choices[1])|| (choices[1].includes(choices[0]) && choices[1]!= choices[0])){
                     if(turn =="Red"){
                         red++;
                         document.getElementById('red-board').innerHTML = red;
@@ -131,11 +131,12 @@ $(document).ready(function(){
                         if (red > blue){
                             document.getElementById('page').style ='background: linear-gradient(to bottom right, red, rgba(0, 0, 255, 0.405)); '
                             document.getElementById('full').style ='background: linear-gradient(to bottom right, red, rgba(0, 0, 255, 0.405)); '                
-                            document.getElementById('winner').innerHTML = "<h1 id = 'winning-color' style ='color:blue'>Winner</br> BLUE</h1><button id ='buttonRefresh'>Re-Start</button>"
+                            document.getElementById('winner').innerHTML = "<h1 id = 'winning-color' style ='color:red'>Winner</br> Red</h1><button onClick='location.reload()' id ='buttonRefresh'>Re-Start</button>"
+
                         }else{
                             document.getElementById('page').style ='background: linear-gradient(to bottom right, rgba(255, 0, 0, 0.405), blue); '
                             document.getElementById('full').style ='background: linear-gradient(to bottom right, rgba(255, 0, 0, 0.405), blue); '
-                            document.getElementById('winner').innerHTML = "<h1 id = 'winning-color' style ='color:red'>Winner</br> Red</h1><button id ='buttonRefresh'>Re-Start</button>"
+                            document.getElementById('winner').innerHTML = "<h1 id = 'winning-color' style ='color:blue'>Winner</br> BLUE</h1><button onClick='location.reload()' id ='buttonRefresh'>Re-Start</button>"
 
                         }
                     }
@@ -144,9 +145,6 @@ $(document).ready(function(){
             }
         });
     }
-    $("#buttonRefresh").click(function(){
-        location.reload();
-    });
         function time(){
             flipped = 0;
             remove =[];
